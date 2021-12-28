@@ -63,3 +63,7 @@ input {
 .question {
   margin-bottom: 25px;
 }
+
+.content-body {
+  display: none;
+}
