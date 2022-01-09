@@ -8,78 +8,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"> 
+    <script defer src="scripts.js"></script>
     <title>quiz app</title>
 </head>
 <body>
     <div class="container ">
-        <div id="Quiz">
-            <h1 class="title">Select an answer!</h1>
-            <div id="Question" class="show-active">
-                <div class="question">
-                    <h2>Question 1: Which of the following is not a real eCommerce platform?</h2>
-                </div>
-                <ul>
-                    <li><input class="radio" type="radio">Shopify</li>
-                    <li><input class="radio" type="radio">WooCommerce</li>
-                    <li><input class="radio" type="radio">ShopCommerce</li>
-                    <li><input class="radio" type="radio">BigCommerce</li>
-                </ul>
+        <h1 class="title">Select an answer!</h1>
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
             </div>
-            <div id="Question" class="content-body">
-                <div class="question">
-                    <h2>Question 2: If Shopify is so good, why are Shopify developers necessary?</h2>
-                </div>
-                <ul>
-                    <li><input class="radio" type="radio">To save time on things like store setups and migrations</li>
-                    <li><input class="radio" type="radio">To extend the limited design options and functionalities of themes
-                        with custom code</li>
-                    <li><input class="radio" type="radio">To provide support with a deep understanding of how the platform
-                        works and what its limitations are</li>
-                    <li><input class="radio" type="radio">All the above</li>
-                </ul>
-            </div>
-            <div id="Question" class="content-body">
-                <div class="question">
-                    <h2>Question 3: Which of the following is true about Shopify developers?</h2>
-                </div>
-                <ul>
-                    <li><input class="radio" type="radio">They are paid extremely well</li>
-                    <li><input class="radio" type="radio">There is a high demand for them</li>
-                    <li><input class="radio" type="radio">They need to know web development, the platform itself, and the
-                        liquid template language</li>
-                    <li><input class="radio" type="radio">All the above</li>
-                </ul>
-            </div>
-            <button type="submit" class="submitAnswer">Submit Answer</button>
         </div>
-        <div id="Pass" class="content-body">
-            <h1 class="title">Woo! Got them all right!</h1>
-        </div>
-        <div id="Fail" class="content-body">
-            <h1 class="title">Ouch! Got at least one wrong!</h1>
+        <div class="controls">
+            <button type="submit" id="start-btn" class="start-btn " >Start</button>
+            <button type="submit" id="next-btn" class="next-btn hide">Next</button>
         </div>
     </div>
     
-    <script>
-        
-
-        function setNewQuestion(){
-            var contentBodies = document.getElementsByClassName('content-body')
-            for (var contentBody of contentBodies) {
-                contentBody.classList.remove('show-active');
-            }
-            document.getElementById(el.textContent).classList.add('show-active');
-        }
-
-        var questions = document.getElementbyId('Question')
-        var nextButton = document.getElementsByClassName('submitAnswer')
-        for (question of questions) {
-            nextButton.addEventListener('click', function (e) {
-                setNewQuestion(e.currentTarget);
-            })
-        }
-
-
-    </script>
 </body>
 </html>

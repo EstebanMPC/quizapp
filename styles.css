@@ -13,14 +13,25 @@ body {
   color: white;
 }
 
-ul {
-  list-style-type: none;
+:root {
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+}
+
+body.correct {
+  --hue: var(--hue-correct);
+}
+
+body.wrong {
+  --hue: var(--hue-wrong);
 }
 
 .title {
   font-family: "Righteous", cursive;
   font-size: 40px;
   padding: 15px 30px;
+  margin-bottom: 10px;
 }
 
 li {
@@ -50,7 +61,13 @@ input {
   padding: 30px 35px;
 }
 
-.submitAnswer {
+.btn-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.start-btn,
+.next-btn {
   background-color: #d81860;
   color: white;
   padding: 10px 40px;
@@ -60,10 +77,30 @@ input {
   margin-left: 20px;
 }
 
-.question {
+.btn {
+  --hue: var(--hue-neutral);
+  border: 1px solid hsl(var(--hue), 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 50%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+  color: white;
+  outline: none;
+}
+
+.btn.correct {
+  --hue: var(--hue-correct);
+  color: black;
+}
+
+.btn.wrong {
+  --hue: var(--hue-wrong);
+}
+
+#question {
   margin-bottom: 25px;
 }
 
-.content-body {
+.hide {
   display: none;
 }
